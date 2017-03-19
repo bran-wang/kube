@@ -1,0 +1,12 @@
+kubectl create -f redis-master-controller.yaml
+kubectl get rc
+kubectl get pods
+kubectl get services
+
+kubectl delete rc rcname
+kubectl delete service servicename
+kubectl delete pod podname
+
+kubectl describe pod podname
+kubectl delete pod –all
+
