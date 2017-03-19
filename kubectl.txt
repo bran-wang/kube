@@ -10,3 +10,10 @@ kubectl delete pod podname
 kubectl describe pod podname
 kubectl delete pod –all
 
+kubectl config view
+kubectl delete -f redis-master-controller.yaml
+
+kubectl config use-context beijing
+kubectl config set-credentials beijing -—username=wyp -—password=wyp
+kubectl config set-context beijing -—namespace=beijing
+kubectl config set-cluster being —-server=https://10.154.0.1 -—insecure-skip-tls-verify=true
