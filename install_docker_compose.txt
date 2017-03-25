@@ -1,0 +1,8 @@
+yum -y install python-pip python-dev
+
+pip install -U docker-compose
+
+chmod +x /usr/bin/docker-compose
+
+docker-compose --version
+
