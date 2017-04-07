@@ -30,6 +30,8 @@ curl --cacert /root/registry-docker/certs/domain.crt -u admin:admin  https://bra
 
 #Simple registry without certificate and base authenticate
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
+docker run -d -p 5000:5000 -v /root/registry-docker/data:/var/lib/registry --restart=always --name registry registry:2
+docker run -d -p 8080:8080 --name registry-ui --link registry -e REGISTRY_URL=http://registry:5000/v2 -e REGISTRY_NAME=localhost:5000 hyper/docker-registry-web
 docker pull ubuntu && docker tag ubuntu localhost:5000/ubuntu
 docker push localhost:5000/ubuntu
 docker pull localhost:5000/ubuntu
