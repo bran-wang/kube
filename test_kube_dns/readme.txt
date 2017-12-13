@@ -1,9 +1,10 @@
-Service解决了Pod的服务发现和负载均衡问题
+>Service解决了Pod的服务发现和负载均衡问题
 
 kube-dns可以解决Service的发现问题
 k8s将Service的名称当做域名注册到kube-dns中，通过Service的名称就可以访问其提供的服务。
 
 在POD里面可以通过Service的名字访问service的服务
+```
 root@k8s-master-0-276edc70-524e-414e-a913-150607184c02:~# kubectl exec jenkins-5ftk4 -- curl -s my-nginx:80
 <!DOCTYPE html>
 <html>
@@ -30,3 +31,4 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
+```
